@@ -1,0 +1,33 @@
+{% load staticfiles %}
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>로그인 페이지</title>
+
+        <link rel = "stylesheet" href='{% static "css/style.css" %}'>
+        <script src="jquery-3.1.1.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="signIn">로그인 / 패스워드</div>
+            <div class="login">
+                <form action="." method="post"> {% csrf_token %}
+                    {% if form.errors %}
+                    <p class = "errornote">에러 발생.</p>
+                    {%  endif %}
+
+                    <input type="text" name="username" placeholder="아이디">
+
+                    <input type="password" name="password" placeholder="패스워드">
+
+                    <input type="submit" value="로그인">
+
+                    <a href="#">회원이 아니신가요?</a>
+                </form>
+                </div>
+
+        </div>
+    </body>
+</html>

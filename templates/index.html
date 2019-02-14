@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Creative - Start Bootstrap Theme</title>
+    <title>원종의 웹 서버</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href='{% static "css/bootstrap.min.css" %}' type="text/css">
@@ -47,17 +47,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand page-scroll" href="#page-top">원종의 웹 서버</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_active %}
+                        <li><a href=''>{{user.username}}</a></li>
+                    <li><a class="page-scroll" href="/logout">로그아웃</a></li>
+                    {%  else %}
+                    <li><a class="page-scroll" href="/login">로그인</a></li>
+                    {% endif %}
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Services</a>
+                        <a class="page-scroll" href="#services">서비스</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#portfolio">Portfolio</a>
@@ -75,10 +78,11 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1>Your Favorite Source of Free Bootstrap Themes</h1>
+                <h1>원종의 웹 서버입니다.</h1>
                 <hr>
-                <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+                <p>이 홈페이지는 Bootstrap/css/html 테마로 제작되었어요. 앞으로의 디자인을 점차 제 입맛대로 수정할 계획입니다.
+                그러기 위해선 이것 저것 만져보면서 어떤 기능이 있는지 살펴봐야 해요.</p>
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">내려가볼까요?</a>
             </div>
         </div>
     </header>
@@ -87,10 +91,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">We've got what you need!</h2>
+                    <h2 class="section-heading">첫 번째 기능입니다!</h2>
                     <hr class="light">
-                    <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-                    <a href="#" class="btn btn-default btn-xl">Get Started!</a>
+                    <p class="text-faded">이 곳은 홈페이지의 부가 설명란입니다. 이 홈페이지에 어떤 기능을 넣을지 고민해봤어요. 일단 로그인 기능을 넣으면 좋을 것 같구 파일 업로드와 DB연동도 추가해야겠어요.</p>
+                    <a href="/login" class="btn btn-default btn-xl">로그인을 해볼까요?</a>
                 </div>
             </div>
         </div>
@@ -100,7 +104,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">At Your Service</h2>
+                    <h2 class="section-heading">제가 만들 일들은..</h2>
                     <hr class="primary">
                 </div>
             </div>
@@ -109,30 +113,30 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
-                        <h3>Sturdy Templates</h3>
-                        <p class="text-muted">Our templates are updated regularly so they don't break.</p>
+                        <i class="fa fa-4x fa-camera wow bounceIn text-primary"></i>
+                        <h3>프로젝트 기록</h3>
+                        <p class="text-muted">이 웹을 만들면서 했던걸 모두 스크린샷으로 기록하고있어요.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
-                        <h3>Ready to Ship</h3>
-                        <p class="text-muted">You can use this theme as is, or you can make changes!</p>
+                        <i class="fa fa-4x fa-credit-card wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                        <h3>빠른 로그인</h3>
+                        <p class="text-muted">쉽게 로그인을 할 수 있어요. 저처럼 말이에요.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
-                        <h3>Up to Date</h3>
-                        <p class="text-muted">We update dependencies to keep things fresh.</p>
+                        <h3>미세먼지 데이터</h3>
+                        <p class="text-muted">미세먼지에 관한 실시간 데이터를 제공할 생각이에요.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
-                        <h3>Made with Love</h3>
-                        <p class="text-muted">You have to make your websites with love these days!</p>
+                        <i class="fa fa-4x fa-ambulance wow bounceIn text-primary" data-wow-delay=".3s"></i>
+                        <h3>보안 서비스 제공</h3>
+                        <p class="text-muted">당신이 제공한 파일이 악성코드인지 한번 검사해볼게요.</p>
                     </div>
                 </div>
             </div>
@@ -148,10 +152,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    KB데이타시스템
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    메인 홈페이지
                                 </div>
                             </div>
                         </div>
@@ -188,45 +192,45 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="{% static "img/portfolio/4.jpg" %}" class="img-responsive" alt="">
+                    <a href="http://www.kds.co.kr/kor/main/index.asp" class="portfolio-box">
+                        <img src="{% static "img/portfolio/8.jpg" %}" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    KB데이타시스템
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    19/02/15 서류발표
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="{% static "img/portfolio/5.jpg" %}" class="img-responsive" alt="">
+                    <a href="https://kca.saramin.co.kr/service/kca/1257/applicant/pass/pass_confirm.asp" class="portfolio-box">
+                        <img src="{% static "img/portfolio/9.jpg" %}" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    한국소비자원
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    19/02/25 서류발표
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="{% static "img/portfolio/6.jpg" %}" class="img-responsive" alt="">
+                    <a href="/dust" class="portfolio-box">
+                        <img src="{% static "img/portfolio/7.jpg" %}" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    미세먼지
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    실시간으로 확인하세요
                                 </div>
                             </div>
                         </div>
@@ -239,8 +243,8 @@
     <aside class="bg-dark">
         <div class="container text-center">
             <div class="call-to-action">
-                <h2>Free Download at Start Bootstrap!</h2>
-                <a href="#" class="btn btn-default btn-xl wow tada">Download Now!</a>
+                <h2>6가지 기능을 확인해보세요!</h2>
+                <a href="#" class="btn btn-default btn-xl wow tada">위로 올라가볼까요?</a>
             </div>
         </div>
     </aside>
@@ -249,17 +253,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Let's Get In Touch!</h2>
+                    <h2 class="section-heading">마지막 단입니다.</h2>
                     <hr class="primary">
-                    <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                    <p>회사에서 흔히 밑에 채용공고 문의나 회사 번호를 적어두는 곳이네요. 제 껄 남겨둘게요.</p>
                 </div>
                 <div class="col-lg-4 col-lg-offset-2 text-center">
                     <i class="fa fa-phone fa-3x wow bounceIn"></i>
-                    <p>123-456-6789</p>
+                    <p>010-3258-2324</p>
                 </div>
                 <div class="col-lg-4 text-center">
                     <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p>
+                    <p>dnjswhd403@naver.com</p>
                 </div>
             </div>
         </div>
