@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+    {% block content %}
+
+        <link rel = "stylesheet" href='{% static "css/rework.css" %}'>
+        <script src="jquery-3.1.1.min.js"></script>
+        <div class = "container">
+            <div class = "upload">
+
+                <form method="post"  enctype="multipart/form-data"> {% csrf_token %}
+
+                    <input type = "file" name="document">
+                    <input type="submit" value="업로드">
+
+
+
+                {% if url %}
+                <p> Uploaded file : <a href = "{{ url }}"> {{ url }} </a></p>
+                {% endif %}
+                </form>
+            </div>
+        </div>
+
+    {% endblock %}

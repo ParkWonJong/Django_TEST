@@ -1,0 +1,20 @@
+body {
+    background-color: #000000;
+    background-image: url("/static/img/main.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body *{
+    font-family:Ubuntu;
+}
+
+h1,h2,h3,h4,h5{
+    fonr-weight:normal;
+    margin:0;
+}
+
+a,a:hover, a:visited{
+    color: #fff;
+    text-decoration: none;
+}

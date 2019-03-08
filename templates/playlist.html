@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+        <link rel = "stylesheet" href='{% static "css/style.css" %}'>
+        <script src="jquery-3.1.1.min.js"></script>
+
+
+
+
+        <div class = "playlists">
+
+            {% for playlist in playlists %}
+                <div class = "playlist">
+
+                    <h2><a href="{% url 'detail' slug=playlist.slug %}"> {{ playlist.title }}</a></h2>
+                    <p>{{ playlist.snippet }}</p>
+                    <p>{{ playlist.date }}</p>
+                    <p>{{ playlist.music }}</p>
+                </div>
+            {%  endfor %}
+        </div>
+    {% endblock %}
