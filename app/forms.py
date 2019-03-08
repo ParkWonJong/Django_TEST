@@ -1,7 +1,7 @@
 from django import forms
 from app.models import UserProfileInfo
 from django.contrib.auth.models import User
-from .models import UploadFileModel
+
 
 
 class UserForm(forms.ModelForm):
@@ -22,8 +22,3 @@ class UserProfileInfoForm(forms.ModelForm):
 class LoginForm(forms.Form):
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
-
-class UploadFileForm(forms.Form):
-    name = forms.CharField(max_length = 15)
-    # files = forms.FileField()
-    files = forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple': True}))

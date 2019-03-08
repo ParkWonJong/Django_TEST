@@ -29,7 +29,6 @@ urlpatterns = [
     path('dust/',views.dust),
     path('login/',views.user_login),
     path('logout/',views.user_logout),
-    path('upload/',views.Upload, name = 'upload'),
     path('test/',views.test),
     path('playlist/',views.NCS_playlist, name = 'list'),
     re_path('playlist/(?P<slug>[\w-]+)/$', views.playlist_detail, name= 'detail'),

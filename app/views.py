@@ -5,8 +5,7 @@ from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
-from .forms import LoginForm, UploadFileForm
-from django.template import RequestContext
+from .forms import LoginForm
 from .models import Playlist
 
 import ctypes
@@ -52,17 +51,6 @@ def user_logout(request):
    logout(request)
    return render(request, 'index.html')
 
-
-
-def Upload(request):
-    context = {}
-    if request.method == 'POST':
-        uploaded_file = request.FILES["document"]
-        fs = FileSystemStorage()
-        name = fs.save(uploaded_file.name, uploaded_file)
-        context['url'] = fs.url(name)
-
-    return render(request, 'upload.html',context)
 
 def test(request):
     return render(request,'test.html')
